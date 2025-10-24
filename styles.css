@@ -1,8 +1,8 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Rubik', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fdfafa;
+  background-color: #f5f5f5;
 
 }
 .image-container {
@@ -20,12 +20,12 @@ body {
 
 .overlay-text {
   position: absolute;
-  top: 60%;
-  left: 50%;
+  top: 10%;
+  left: 20%;
   transform: translate(-50%, -50%);
   color: white;
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 400;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   margin: 0;
 }
@@ -35,9 +35,8 @@ body {
     align-items: center;
     justify-content: center;
     margin:20px 0;
-    
-
-}
+    width: 100%;
+  }
 form {
   background-color: #fff;
   padding: 20px;
@@ -48,34 +47,78 @@ form {
   box-sizing: border-box;
 }
 
-
-label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="tel"],
-input[type="checkbox"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
 input[type="checkbox"] {
   width: auto;
+  padding: 10px;
   margin-right: 10px;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+label {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+.phone-group {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.form-group {
+  position: relative;
+  border: 1px solid #4D1Edf;
+  background: white;
+  border-radius: 5px;
+}
+.form-group:focus-within {
+  border: 2px solid #4D1Edf; /* Thicker border and blue color */
+}
+.name{
+  margin-bottom: 20px;
+}
+.form-group input{
+  width: 80%;
+  padding: 12px 10px 0px 10px;
+  font-size: 1rem;
+  background: white;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 0 4px;
+}
+.form-group label {
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  background: white;
+  color: #777;
+  padding: 0 4px;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+.form-group input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: -8px;
+  left: -8px;
+  font-size: 0.8rem;
+  color: #4D1Edf;
+}
+.form-group input::placeholder {
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+
+.form-group input:focus::placeholder {
+  opacity: 1; 
 }
 
 button {
   margin-top: 20px;
   width: 100%;
   padding: 12px;
-  background-color: #0078D4;
+  background-color: #4D1Edf;
   color: white;
   border: none;
   border-radius: 5px;
@@ -84,27 +127,42 @@ button {
 }
 
 button:hover {
-  background-color: #005ea2;
+  background-color: #2b1096;
 }
 
 .info{
-    background-color: #c2daff;
+    background-color: #2b1096;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    color: #fff;
 }
-
+.info h2{
+  font-weight: 500;
+}
+.info a{
+  color: #fff;
+}
 .address, .contact {
     padding-left: 10px;
     min-width: 250px;
 
 
 }
+.thanks-text{
+  text-align: center;
+  color: #4D1Edf;
+}
+.thanks-text h2{
+  font-weight: 400;
+}
+
 
 @media screen and (max-width: 500px){
     .overlay-text{
         font-size: 1.5rem;
     }
+    
 }
 
